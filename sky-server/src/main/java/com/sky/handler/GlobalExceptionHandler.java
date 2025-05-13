@@ -24,4 +24,6 @@ public class GlobalExceptionHandler {
         return Result.error(ex.getMessage());
     }
 
+
+
 }
