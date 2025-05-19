@@ -1,5 +1,6 @@
 package com.sky.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,6 +38,8 @@ public class User implements Serializable {
     //头像
     private String avatar;
 
+
+    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
     //注册时间
     private LocalDateTime createTime;
 }
