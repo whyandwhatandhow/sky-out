@@ -18,6 +18,7 @@ import com.sky.result.PageResult;
 import com.sky.service.EmployeeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 import java.util.List;
@@ -99,6 +100,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         return new PageResult(total,records);
     }
 
+    /**
+     * 员工状态
+     * @param statue
+     * @param id
+     */
     @Override
     public void setStatue(Integer statue, Long id) {
         Employee employee=Employee.builder()
@@ -109,5 +115,35 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.update(employee);
 
     }
+
+
+    /**
+     * 根据id查找用户
+     * @param id
+     * @return
+     */
+    @Override
+    public Employee selectUserById(Long id) {
+        Employee employee=new Employee();
+        employee.setId(id);
+        BeanUtils.copyProperties(employeeMapper.selectById(id),employee);
+        employee.setPassword("*****");
+        return employee;
+    }
+
+
+    /**
+     * 修改员工信息
+     * @param employeeDTO
+     */
+    @Override
+    public void updateUser(EmployeeDTO employeeDTO) {
+        Employee employee=new Employee();
+        BeanUtils.copyProperties(employeeDTO,employee);
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser(BaseContext.getCurrentId());
+        employeeMapper.update(employee);
+    }
+
 
 }

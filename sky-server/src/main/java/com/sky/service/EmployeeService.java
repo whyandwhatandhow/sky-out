@@ -20,4 +20,8 @@ public interface EmployeeService {
     PageResult getPage(EmployeePageQueryDTO employeePageQueryDTO);
 
     void setStatue(Integer statue, Long id);
+
+    Employee selectUserById(Long id);
+
+    void updateUser(EmployeeDTO employeeDTO);
 }
