@@ -39,7 +39,7 @@ public class User implements Serializable {
     private String avatar;
 
 
-    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     //注册时间
     private LocalDateTime createTime;
 }

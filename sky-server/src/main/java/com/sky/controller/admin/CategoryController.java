@@ -74,7 +74,7 @@ public class CategoryController {
      */
     @GetMapping("/list")
     @ApiOperation("根据类型查找分类")
-    public Result<List<Category>> SearchCategory(Integer type){
+    public Result<List<Category>> SearchCategory(@RequestParam Integer type){
         List<Category>list=categoryService.list(type);
         return Result.success(list);
     }

@@ -41,10 +41,10 @@ public class Setmeal implements Serializable {
     private String image;
 
 
-    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
 
-    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;
 
     private Long createUser;

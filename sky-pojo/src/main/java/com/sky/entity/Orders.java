@@ -53,11 +53,11 @@ public class Orders implements Serializable {
     private Long addressBookId;
 
     //下单时间
-    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime orderTime;
 
     //结账时间
-    @JsonFormat(pattern = "yyyy-mm-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime checkoutTime;
 
     //支付方式 1微信，2支付宝
